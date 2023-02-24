@@ -1,0 +1,38 @@
+﻿@model AuthenticationSystemDemo.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+@using (Html.BeginForm("Login", "Home", FormMethod.Post)) {
+    <table>
+        <tr>
+            <th>Login</th>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(u => u.Email, new { placeholder = "Enter Email", autofocus = "autofocus" }) </td>
+        </tr>
+        <tr>
+            <td>@Html.ValidationMessageFor(u => u.Email, "", new { @class = "red bold" })</td>
+        </tr>
+        <tr>
+            <td>@Html.PasswordFor(u => u.Password, new { placeholder = "Enter Password" }) </td>
+        </tr>
+        <tr>
+            <td>@Html.ValidationMessageFor(u => u.Password, "", new { @class = "red bold" })</td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="Login" class="btn-login" /></td>
+        </tr>
+        <tr>
+            <td>
+                Email = test@test.com<br />
+                Password = Test@123
+            </td>
+        </tr>
+    </table>
+}
+</main>
+
+<script src="~/Scripts/app.js" defer></script>

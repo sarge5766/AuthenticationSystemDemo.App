@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Authentication System Demo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Styles/Site.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="orange poppins">A</span>uthentication <span class="orange poppins">S</span>ystem <span class="orange poppins">D</span>emo
+        </div>
+        @if (Session["Username"] != null) {
+            <nav>
+                <ul>
+                    <li><a href="/Home/Logout">Log out</a></li>
+                </ul>
+            </nav>
+        }
+
+    </header>
+
+        @RenderBody()
+
+    <footer>
+
+    </footer>
+   
+</body>
+</html>
